@@ -1,0 +1,38 @@
+<assembly>
+	<id>bin</id>
+	<formats>
+		<!-- <format>tar.gz</format> -->
+		<format>zip</format>
+	</formats>
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<!-- 将scope为runtime的依赖包打包到lib目录下。 -->
+			<outputDirectory>lib</outputDirectory>
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>config.properties</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>lib</directory>
+			<outputDirectory>/lib</outputDirectory>
+			<includes>
+				<include>chromedriver.exe</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>bin</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>*.sh</include>
+				<include>*.bat</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>
